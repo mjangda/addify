@@ -2,6 +2,10 @@
   "name": "@mjangda/addify",
   "version": "1.0.4",
   "description": "Simple Node.js script that adds all provided number values together",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjangda/addify.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "jest"
