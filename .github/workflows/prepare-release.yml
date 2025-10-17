@@ -1,0 +1,27 @@
+name: Prepare Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version-type:
+        description: 'Version type'
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  prepare-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Prepare release
+        uses: Automattic/vip-actions/npm-prepare-release@trunk
+        with:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          node-version: 'lts/*'
+          version-type: ${{ inputs.version-type }}
