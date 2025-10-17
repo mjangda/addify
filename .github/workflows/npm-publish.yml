@@ -1,0 +1,21 @@
+name: Publish to npm
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - name: Publish package to npm
+        uses: Automattic/vip-actions/npm-publish@trunk
+        with:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          node-version: 'lts/*'
