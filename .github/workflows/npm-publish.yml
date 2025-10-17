@@ -17,6 +17,5 @@ jobs:
       - name: Publish package to npm
         uses: Automattic/vip-actions/npm-publish@trunk
         with:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           node-version: 'lts/*'
