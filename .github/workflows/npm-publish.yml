@@ -17,4 +17,5 @@ jobs:
         uses: Automattic/vip-actions/npm-publish@c3e7cf188f63a76685b1495a237828845c3ae531
         with:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USE_TRUSTED_PUBLISHING: 'true'
           node-version: 'lts/*'
