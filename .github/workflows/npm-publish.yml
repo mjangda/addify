@@ -1,13 +1,13 @@
 name: Publish to npm
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [closed]
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    if: contains( github.event.pull_request.labels.*.name, '[ Type ] NPM version update' ) && startsWith( github.head_ref, 'release/') && github.event.pull_request.merged == true
     permissions:
       contents: write
       pull-requests: write
