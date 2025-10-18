@@ -14,7 +14,7 @@ jobs:
       id-token: write
     steps:
       - name: Publish package to npm
-        uses: Automattic/vip-actions/npm-publish@2e39f0da80dc446ab3180040691e83e41bc2450b
+        uses: Automattic/vip-actions/npm-publish@7db404459133b50892861fd43a9d16e1129366cd
         with:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USE_TRUSTED_PUBLISHING: 'true'
