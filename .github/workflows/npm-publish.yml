@@ -13,17 +13,9 @@ jobs:
       pull-requests: write
       id-token: write
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
+      - name: Publish package to npm
+        uses: Automattic/vip-actions/npm-publish@2e39f0da80dc446ab3180040691e83e41bc2450b
         with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
-
-      # Ensure npm 11.5.1 or later is installed
-      - name: Update npm
-        run: npm install -g npm@latest
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: npm test
-      - run: npm publish
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USE_TRUSTED_PUBLISHING: 'true'
+          node-version: 'lts/*'
