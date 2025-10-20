@@ -1,6 +1,6 @@
 {
   "name": "@mjangda/addify",
-  "version": "1.0.7",
+  "version": "1.0.8-dev.0",
   "description": "Simple Node.js script that adds all provided number values together",
   "repository": {
     "type": "git",
